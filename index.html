@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Toko Serba Ada - Katalog Produk</title>
+  <style>
+    /* RESET & BASE STYLES */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background-color: #f4f6f9;
+      color: #333;
+      padding-bottom: 50px;
+    }
+
+    /* HEADER */
+    header {
+      background-color: #128c7e;
+      color: white;
+      text-align: center;
+      padding: 2rem 1rem;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+
+    header h1 {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    header p {
+      font-size: 1rem;
+      opacity: 0.9;
+    }
+
+    /* CONTAINER & GRID PRODUK */
+    .container {
+      max-width: 1100px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+
+    /* CARD PRODUK */
+    .card {
+      background: white;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    }
+
+    .card-img-container {
+      width: 100%;
+      height: 250px;
+      overflow: hidden;
+      background-color: #eee;
+    }
+
+    .card-img-container img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .card-body {
+      padding: 1.2rem;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+
+    .product-title {
+      font-size: 1.25rem;
+      font-weight: bold;
+      color: #222;
+      margin-bottom: 0.5rem;
+    }
+
+    .product-price {
+      font-size: 1.1rem;
+      font-weight: bold;
+      color: #25d366;
+      margin-bottom: 0.8rem;
+    }
+
+    .product-desc {
+      font-size: 0.9rem;
+      color: #666;
+      line-height: 1.4;
+      margin-bottom: 1.5rem;
+      flex-grow: 1;
+    }
+
+    /* BUTTON WHATSAPP */
+    .btn-wa {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      background-color: #25d366;
+      color: white;
+      text-decoration: none;
+      padding: 0.75rem 1rem;
+      border-radius: 8px;
+      font-weight: bold;
+      font-size: 0.95rem;
+      transition: background-color 0.2s ease;
+      border: none;
+      cursor: pointer;
+      width: 100%;
+    }
+
+    .btn-wa:hover {
+      background-color: #1ebc57;
+    }
+
+    /* FOOTER */
+    footer {
+      text-align: center;
+      margin-top: 3rem;
+      color: #888;
+      font-size: 0.85rem;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Toko Serba Ada</h1>
+    <p>Pesan langsung secara praktis melalui WhatsApp!</p>
+  </header>
+
+  <div class="container">
+    <div class="product-grid">
+
+      <!-- PRODUK 1 -->
+      <div class="card">
+        <div class="card-img-container">
+          <!-- Ganti '020dbb6abdc447991221698c03fe4fab.jpg' dengan nama/path file gambar Anda -->
+          <img src="020dbb6abdc447991221698c03fe4fab.jpg" alt="Es Teh Manis Segar">
+        </div>
+        <div class="card-body">
+          <h2 class="product-title">Es Teh Manis Segar</h2>
+          <div class="product-price">Rp 5.000</div>
+          <p class="product-desc">Minuman teh es segar racikan khas Ayam Gebyok Bang Jarwo, pas untuk melepas dahaga Anda!</p>
+          <button class="btn-wa" onclick="buyViaWA('Es Teh Manis Segar', 'Rp 5.000')">
+            💬 Beli via WhatsApp
+          </button>
+        </div>
+      </div>
+
+      <!-- PRODUK 2 -->
+      <div class="card">
+        <div class="card-img-container">
+          <!-- Ganti 'cbe53b6d6dc4bdba6b0a0dea6959617d.jpg' dengan nama/path file gambar Anda -->
+          <img src="cbe53b6d6dc4bdba6b0a0dea6959617d.jpg" alt="Buah Kersen / Talok Segar">
+        </div>
+        <div class="card-body">
+          <h2 class="product-title">Buah Kersen / Talok Segar</h2>
+          <div class="product-price">Rp 15.000 / porsi</div>
+          <p class="product-desc">Buah kersen/talok segar pilihan yang dipetik langsung. Rasanya manis khas dan kaya manfaat kesehatan.</p>
+          <button class="btn-wa" onclick="buyViaWA('Buah Kersen / Talok Segar', 'Rp 15.000 / porsi')">
+            💬 Beli via WhatsApp
+          </button>
+        </div>
+      </div>
+
+      <!-- PRODUK 3 -->
+      <div class="card">
+        <div class="card-img-container">
+          <!-- Ganti '13b80db33ff1dc7037b170240f1f74a4.jpg' dengan nama/path file gambar Anda -->
+          <img src="13b80db33ff1dc7037b170240f1f74a4.jpg" alt="Toyota Land Cruiser GR Sport">
+        </div>
+        <div class="card-body">
+          <h2 class="product-title">Toyota Land Cruiser GR Sport</h2>
+          <div class="product-price">Rp 2.500.000.000</div>
+          <p class="product-desc">SUV mewah gagah warna hitam mengkilap dengan tampilan sporty, performa tangguh, dan kenyamanan terbaik.</p>
+          <button class="btn-wa" onclick="buyViaWA('Toyota Land Cruiser GR Sport', 'Rp 2.500.000.000')">
+            💬 Beli via WhatsApp
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2026 Toko Serba Ada. All rights reserved.</p>
+  </footer>
+
+  <!-- JAVASCRIPT LOGIC -->
+  <script>
+    // Ganti nomor ini dengan nomor WhatsApp Anda (Gunakan format Internasional tanpa tanda +)
+    // Contoh: 6281234567890 (62 adalah kode negara Indonesia)
+    const whatsappNumber = "6281234567890";
+
+    function buyViaWA(productName, productPrice) {
+      // Menyusun template pesan
+      const message = `Halo, saya ingin memesan produk berikut:\n\n` +
+                      `📌 *Nama Produk:* ${productName}\n` +
+                      `💰 *Harga:* ${productPrice}\n\n` +
+                      `Apakah produk ini masih tersedia? Terima kasih!`;
+
+      // Mengencode teks pesan agar sesuai standar URL
+      const encodedMessage = encodeURIComponent(message);
+
+      // Membuat URL link WhatsApp
+      const waURL = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+
+      // Membuka tautan WhatsApp di tab baru
+      window.open(waURL, '_blank');
+    }
+  </script>
+
+</body>
+  </html>
